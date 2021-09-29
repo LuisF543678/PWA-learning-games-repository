@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memorama</title>
+    <link rel="stylesheet" href="style.css">
+<!-- Font Awesome -->
+<link
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+  rel="stylesheet"
+/>
+<!-- Google Fonts -->
+<link
+  href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+  rel="stylesheet"
+/>
+<!-- MDB -->
+<link
+  href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.6.0/mdb.min.css"
+  rel="stylesheet"
+/>
+</head>
+<body>
+    <main class="app" ng-app="app" ng-controller="AppController" ng-class="{'app-ready': appReady}">
+
+        <div class="app__hud">
+      
+          <div class="app__hud__game-info" ng-hide="gameCompleted" ng-click="titleAction()" ng-swipe-left="changeIcons()" ng-swipe-right="changeIcons()">Encuentra el par</div>
+          <div class="app__hud__game-completed" ng-show="gameCompleted">
+            <div class="alert alert-success" role="alert">
+                Felicidades has completado el juego!!
+              </div>
+          </div>
+          <div class="app__hud__game-status">Clicks: {{clickCount}}, Cartas: {{cardsLeft}}</div>
+          <button ng-click="restart()" class="app__hud__btn-restart">Restart</button>
+        </div>
+      
+        <div class="app__cards-container">
+      
+          <div class="app__cards-container__card" role="button" ng-repeat="card in list" id="{{ 'card-' + card.id }}">
+      
+            <div class="front app__cards-container__card__front" ng-click="click(card, $index)" ng-swipe-right="click(card, $index)" ng-swipe-left="click(card, $index)"> {{card.isKnown ? "" : "?"}}</div>
+            <div class="back app__cards-container__card__back">
+              <span ng-class="card.theme">{{card.icon}}</span>
+            </div>
+      
+          </div>
+      
+        </div>
+      
+      </main>
+      
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+      <script src="https://cdn.rawgit.com/nnattawat/flip/v1.0.19/dist/jquery.flip.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.9/angular.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.9/angular-route.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.9/angular-animate.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.9/angular-touch.min.js"></script>
+      <script src="scritp.js"></script>
+</body>
+</html>
