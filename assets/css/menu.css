@@ -1,6 +1,11 @@
+@font-face {
+  font-family: 'Rubik';
+  src: url('../../assets/fonts/Rubik-Bold.ttf')  format('truetype')
+}
+
 body {
     margin: 40px 0;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Rubik', sans-serif !important;
     font-size: 14px;
     font-weight: 500;
     background: rgb(63,94,251);
@@ -9,7 +14,7 @@ body {
   }
   
   .title {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: 'Rubik', sans-serif !important;
     font-size: 24px;
     font-weight: 700;
     color:white;
@@ -125,7 +130,7 @@ body {
   }
   
   .card-info h1 {
-    font-family: sans-serif;
+    font-family: 'Rubik', sans-serif !important;
     font-size: 36px;
     font-weight: 700;
     text-shadow: rgba(0, 0, 0, 0.5) 0 10px 10px;
