@@ -1,47 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tic-tac-toe</title>
-    <link rel="stylesheet" href="tictac.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tic-tac-toe</title>
+  <link rel="stylesheet" href="../assets/css/tictac.css">
 </head>
+
 <body>
-    <div class="wrapper">
-        <h1 class="gameTitle">Tic-tac-toe</h1>
-        <div class="game-board"> 
-      
-          <!--top row of squares-->
-          <div class="play-square" id="sqTopLeft" onclick="sqPlayed(1)"></div>
-          <div class="play-square" id="sqTopMiddle" onclick="sqPlayed(2)"></div>
-          <div class="play-square" id="sqTopRight" onclick="sqPlayed(3)"></div>
-      
-          <!--middle row of squares-->
-          <div class="play-square" id="sqMiddleLeft" onclick="sqPlayed(4)"></div>
-          <div class="play-square" id="sqMiddleMiddle" onclick="sqPlayed(5)"></div>
-          <div class="play-square" id="sqMiddleRight" onclick="sqPlayed(6)"></div>
-      
-          <!--bottom row of squares-->
-          <div class="play-square" id="sqBottomLeft" onclick="sqPlayed(7)"></div>
-          <div class="play-square" id="sqBottomMiddle" onclick="sqPlayed(8)"></div>
-          <div class="play-square" id="sqBottomRight" onclick="sqPlayed(9)"></div>
-      
-      
-          <!--game grid lines-->
-          <div class="game-grid-line vert-line" id="left-vert"></div>
-          <div class="game-grid-line vert-line" id="right-vert"></div>
-          <div class="game-grid-line horiz-line" id="top-horiz"></div>
-          <div class="game-grid-line horiz-line" id="bottom-horiz"></div>
-        
-        </div>
-        
-        <h2 class="message">Player 1, make the first move!</h2>
-        
-        <div class="resetButton hide">Play again?</div>
-        
-      </div>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-      <script src="tictac.js"></script>
+  <div class="wrapper">
+    <h1 class="gameTitle">Tic-tac-toe</h1>
+    <div class="game-board">
+
+      <!--top row of squares-->
+      <div class="play-square" id="sqTopLeft" onclick="sqPlayed(1)"></div>
+      <div class="play-square" id="sqTopMiddle" onclick="sqPlayed(2)"></div>
+      <div class="play-square" id="sqTopRight" onclick="sqPlayed(3)"></div>
+
+      <!--middle row of squares-->
+      <div class="play-square" id="sqMiddleLeft" onclick="sqPlayed(4)"></div>
+      <div class="play-square" id="sqMiddleMiddle" onclick="sqPlayed(5)"></div>
+      <div class="play-square" id="sqMiddleRight" onclick="sqPlayed(6)"></div>
+
+      <!--bottom row of squares-->
+      <div class="play-square" id="sqBottomLeft" onclick="sqPlayed(7)"></div>
+      <div class="play-square" id="sqBottomMiddle" onclick="sqPlayed(8)"></div>
+      <div class="play-square" id="sqBottomRight" onclick="sqPlayed(9)"></div>
+
+
+      <!--game grid lines-->
+      <div class="game-grid-line vert-line" id="left-vert"></div>
+      <div class="game-grid-line vert-line" id="right-vert"></div>
+      <div class="game-grid-line horiz-line" id="top-horiz"></div>
+      <div class="game-grid-line horiz-line" id="bottom-horiz"></div>
+
+    </div>
+
+    <h2 class="message">Player 1, make the first move!</h2>
+
+    <div class="resetButton hide">Play again?</div>
+
+    <a href="../menu/menu.html" class="button green">Volver al menú</a>
+
+
+  </div>
+  <script src="../assets/js/jquery2.1.3.min.js"></script>
+  <script src="../assets/js/tictac.js"></script>
 </body>
+
 </html>
