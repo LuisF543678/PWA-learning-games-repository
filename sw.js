@@ -1,19 +1,17 @@
-// Registering Service Worker
-if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('/sw.js');
-}
-
-
-self.addEventListener('install', (e) => {
-  console.log('[Service Worker] Install');
-});
-
-
 
 // use a cacheName for cache versioning
-var cacheName = 'gi-cache';
-var appShellFiles = [
+var cacheName = 'pwa-1';
+var contentToCache = [
   'index.html',
+  './menu/menu.html',
+  './main/main.html',
+  './1-game/memorama.html',
+  './2-game/crossword.html',
+  './3-game/tictac.html',
+
+  'manifest.json',
+  'script.js',
+  'sw.js',
 
   './assets/css/all.min.css',
   './assets/css/bootstrap.css',
@@ -80,13 +78,13 @@ var appShellFiles = [
   './assets/icons/ms-icon-310x310.png',
   './assets/icons/ms-icon-70x70.png',
 ];
-//'./assets/fonts/Rubik-Bold.ttf',
+'./assets/fonts/Rubik-Bold.ttf',
 
 self.addEventListener('install', (e) => {
   console.log('[Service Worker] Install');
   e.waitUntil(
     caches.open(cacheName).then((cache) => {
-          console.log('[Servicio Worker] Almacena todo en caché: contenido e intérprete de la aplicación');
+      console.log('[Servicio Worker] Almacena todo en caché: contenido e intérprete de la aplicación');
       return cache.addAll(contentToCache);
     })
   );
@@ -95,14 +93,29 @@ self.addEventListener('install', (e) => {
 self.addEventListener('fetch', (e) => {
   e.respondWith(
     caches.match(e.request).then((r) => {
-          console.log('[Servicio Worker] Obteniendo recurso: '+e.request.url);
+      console.log('[Servicio Worker] Obteniendo recurso: ' + e.request.url);
       return r || fetch(e.request).then((response) => {
-                return caches.open(cacheName).then((cache) => {
-          console.log('[Servicio Worker] Almacena el nuevo recurso: '+e.request.url);
+        return caches.open(cacheName).then((cache) => {
+          console.log('[Servicio Worker] Almacena el nuevo recurso: ' + e.request.url);
           cache.put(e.request, response.clone());
           return response;
         });
       });
     })
   );
+});
+
+self.addEventListener('fetch', (e) => {
+  e.respondWith((async () => {
+    const r = await caches.match(e.request);
+    console.log(r);
+    if(r) return r;
+    const response = await fetch(e.request);
+    const cache = await caches.open(cacheName);
+    console.log(`${e.request.url}`);
+    cache.put(e.request, response.cloned());
+    console.log("no entro");
+    return response;
+
+  })());
 });
