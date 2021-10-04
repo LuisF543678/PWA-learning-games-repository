@@ -1,8 +1,8 @@
 
 window.setTimeout(function () {
-    window.location.href = "./main/main.html";
+    window.location.href = "main.html";
 
-}, 8000);
+}, 10000);
 
 /* function preventBack() {
     window.history.forward();

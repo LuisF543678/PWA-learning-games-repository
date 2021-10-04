@@ -1,5 +1,5 @@
 {
-   "name":"PWA",
+   "name":"Learn by playing!",
     "short_name":"PWA",
     "description":"First Progressive Web Application.",
     "icons":[
@@ -29,8 +29,8 @@
           "type":"image/png"
        }
     ],
-    "start_url":"/main/main.html",
+    "start_url":"./main.html",
     "display":"fullscreen",
-    "theme_color":"#cc194b",
+    "theme_color":"#7319cc",
     "background_color":"#424242"
 }

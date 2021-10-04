@@ -1,13 +1,12 @@
-
 // use a cacheName for cache versioning
 var cacheName = 'pwa-1';
 var contentToCache = [
-  'index.html',
-  './menu/menu.html',
-  './main/main.html',
-  './1-game/memorama.html',
-  './2-game/crossword.html',
-  './3-game/tictac.html',
+  './index.html',
+  './menu.html',
+  './main.html',
+  './memorama.html',
+  './crossword.html',
+  './tictac.html',
 
   'manifest.json',
   'script.js',
@@ -80,17 +79,17 @@ var contentToCache = [
 ];
 './assets/fonts/Rubik-Bold.ttf',
 
-self.addEventListener('install', (e) => {
-  console.log('[Service Worker] Install');
-  e.waitUntil(
-    caches.open(cacheName).then((cache) => {
-      console.log('[Servicio Worker] Almacena todo en caché: contenido e intérprete de la aplicación');
-      return cache.addAll(contentToCache);
-    })
-  );
-});
+  self.addEventListener('install', (e) => {
+    console.log('[Service Worker] Install');
+    e.waitUntil(
+      caches.open(cacheName).then((cache) => {
+        console.log('[Servicio Worker] Almacena todo en caché: contenido e intérprete de la aplicación');
+        return cache.addAll(contentToCache);
+      })
+    );
+  });
 
-self.addEventListener('fetch', (e) => {
+/* self.addEventListener('fetch', (e) => {
   e.respondWith(
     caches.match(e.request).then((r) => {
       console.log('[Servicio Worker] Obteniendo recurso: ' + e.request.url);
@@ -103,19 +102,18 @@ self.addEventListener('fetch', (e) => {
       });
     })
   );
-});
+}); */
 
 self.addEventListener('fetch', (e) => {
   e.respondWith((async () => {
     const r = await caches.match(e.request);
     console.log(r);
-    if(r) return r;
+    if (r) return r;
     const response = await fetch(e.request);
     const cache = await caches.open(cacheName);
     console.log(`${e.request.url}`);
-    cache.put(e.request, response.cloned());
+    cache.put(e.request, response.clone());
     console.log("no entro");
     return response;
-
   })());
 });
