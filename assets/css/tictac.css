@@ -1,6 +1,7 @@
 body {
     font-family: Arial, Helvetica, sans-serif; 
-    color: SlateGray;
+    color: rgb(235, 235, 235);
+    background: linear-gradient(to left, #6c41ef, #345);
   }
   
   .wrapper {
@@ -40,6 +41,7 @@ body {
   }
   
   .play-square {
+    color:#3e3535;
     position: absolute;
     border: 1px dotted transparent;
     height: 128px;
