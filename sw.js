@@ -41,10 +41,8 @@ var contentToCache = [
   './assets/js/vue.js',
   './assets/js/vue.min.js',
 
-  './assets/img/Education - 35448 (1).gif',
-  './assets/img/Education - 35448.gif',
-  './assets/img/banner-move-2.gif',
-  './assets/img/banner-move.gif',
+  './assets/img/banner-move-2.gif',// Y
+  './assets/img/banner-move.gif',// Y
   './assets/img/card-img-1.jpg',
   './assets/img/card-img-2.png',
   './assets/img/card-img-3.png',
