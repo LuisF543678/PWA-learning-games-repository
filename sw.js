@@ -1,6 +1,11 @@
-// use a cacheName for cache versioning
-var cacheName = 'pwa-1';
-var contentToCache = [
+/**
+ * use a CACHE_NAME for cache versioning
+ */ 
+
+var CACHE_NAME = 'pwa-1';
+
+var MULTIMEDIA_CONTENT_CACHE = [
+  
   './index.html',
   './menu.html',
   './main.html',
@@ -41,7 +46,7 @@ var contentToCache = [
   './assets/js/vue.js',
   './assets/js/vue.min.js',
 
-  './assets/img/banner-move-2.gif',// Y
+  './assets/img/banner-move-2.gif',
   './assets/img/card-img-1.jpg',
   './assets/img/card-img-2.png',
   './assets/img/card-img-3.png',
@@ -73,19 +78,21 @@ var contentToCache = [
   './assets/icons/ms-icon-150x150.png',
   './assets/icons/ms-icon-310x310.png',
   './assets/icons/ms-icon-70x70.png',
+
+  './assets/fonts/Rubik-Bold.ttf',
 ];
-'./assets/fonts/Rubik-Bold.ttf',
+
 
 /**
- * addEventListener
+ *  addEventListener Caches media files
  */
 
   self.addEventListener('install', (e) => {
     console.log('[Service Worker] Install');
     e.waitUntil(
-      caches.open(cacheName).then((cache) => {
+      caches.open(CACHE_NAME).then((cache) => {
         console.log('[Servicio Worker] Almacena todo en caché: contenido e intérprete de la aplicación');
-        return cache.addAll(contentToCache);
+        return cache.addAll(MULTIMEDIA_CONTENT_CACHE);
       })
     );
   });
@@ -95,7 +102,7 @@ var contentToCache = [
     caches.match(e.request).then((r) => {
       console.log('[Servicio Worker] Obteniendo recurso: ' + e.request.url);
       return r || fetch(e.request).then((response) => {
-        return caches.open(cacheName).then((cache) => {
+        return caches.open(CACHE_NAME).then((cache) => {
           console.log('[Servicio Worker] Almacena el nuevo recurso: ' + e.request.url);
           cache.put(e.request, response.clone());
           return response;
@@ -111,10 +118,10 @@ self.addEventListener('fetch', (e) => {
     console.log(r);
     if (r) return r;
     const response = await fetch(e.request);
-    const cache = await caches.open(cacheName);
+    const cache = await caches.open(CACHE_NAME);
     console.log(`${e.request.url}`);
     cache.put(e.request, response.clone());
-    console.log("no entro");
+    console.log("I do not enter");
     return response;
   })());
 });
