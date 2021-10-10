@@ -286,12 +286,12 @@ body {
   }
   
   .progress {
-    animation: progress 9s ease;
-    -moz-animation: progress 9s ease;
+    animation: progress 10s ease;
+    -moz-animation: progress 10s ease;
     /* Firefox */
-    -webkit-animation: progress 9s ease;
+    -webkit-animation: progress 10s ease;
     /* Safari and Chrome */
-    -o-animation: progress 9s ease;
+    -o-animation: progress 10s ease;
     /* Opera */
   }
   

@@ -2,7 +2,7 @@
 window.setTimeout(function () {
     window.location.href = "main.html";
 
-}, 10000);
+}, 12000);
 
 /* function preventBack() {
     window.history.forward();
