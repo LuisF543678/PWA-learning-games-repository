@@ -42,7 +42,6 @@ var contentToCache = [
   './assets/js/vue.min.js',
 
   './assets/img/banner-move-2.gif',// Y
-  './assets/img/banner-move.gif',// Y
   './assets/img/card-img-1.jpg',
   './assets/img/card-img-2.png',
   './assets/img/card-img-3.png',
@@ -76,6 +75,10 @@ var contentToCache = [
   './assets/icons/ms-icon-70x70.png',
 ];
 './assets/fonts/Rubik-Bold.ttf',
+
+/**
+ * addEventListener
+ */
 
   self.addEventListener('install', (e) => {
     console.log('[Service Worker] Install');
