@@ -84,7 +84,7 @@ const app = new Vue({
 });
 
 
-var network_status= true;
+var network_status = true;
 setInterval(function () {
   if (!network_status && navigator.onLine) {
     network_status = true;
