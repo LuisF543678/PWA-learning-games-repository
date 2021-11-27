@@ -46,7 +46,7 @@ var MULTIMEDIA_CONTENT_CACHE = [
   './assets/js/vue.js',
   './assets/js/vue.min.js',
 
-  './assets/img/banner-move-2.gif',
+  './assets/img/banner.jpg',
   './assets/img/card-img-1.jpg',
   './assets/img/card-img-2.png',
   './assets/img/card-img-3.png',
