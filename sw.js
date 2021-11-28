@@ -12,6 +12,7 @@
   './crossword.html',
   './tictac.html',
   './404.html',
+  './webcam.html',
 
   'manifest.json',
   'script.js',
@@ -63,6 +64,7 @@
   './assets/img/cloud-connection-offline.png',
   './assets/img/loading.gif',
   './assets/img/loading-fast.gif',
+  './assets/img/camera.gif',
 
   './assets/icons/android-icon-144x144.png',
   './assets/icons/android-icon-192x192.png',
