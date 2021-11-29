@@ -26,11 +26,11 @@
     <div class="app__hud">
       <div class="app__hud__game-info" ng-hide="gameCompleted" ng-click="titleAction()" ng-swipe-left="changeIcons()"
         ng-swipe-right="changeIcons()">Encuentra el par</div>
-      <div class="app__hud__game-completed" ng-show="gameCompleted">
+      <!-- <div class="app__hud__game-completed" ng-show="gameCompleted">
         <div class="alert alert-success" role="alert">
           Felicidades has completado el juego!!
         </div>
-      </div>
+      </div> -->
       <div class="app__hud__game-status">Clicks: {{clickCount}}, Cartas: {{cardsLeft}}</div>
       <button ng-click="restart()" class="app__hud__btn-restart">Restart</button>
     </div>
@@ -41,6 +41,13 @@
           ng-swipe-right="click(card, $index)" ng-swipe-left="click(card, $index)"> {{card.isKnown ? "" : "?"}}</div>
         <div class="back app__cards-container__card__back">
           <span ng-class="card.theme">{{card.icon}}</span>
+        </div>
+      </div>
+      <div class="app__hud__game-completed" ng-show="gameCompleted">
+        <div class="alert alert-success" role="alert">
+          Felicidades has completado el juego!!
+          <b>Tómate una foto (toca la cámara)</b>
+          <a href="./webcam.html"> <img src="./assets/img/camera.gif" alt=""></a>
         </div>
       </div>
     </div>

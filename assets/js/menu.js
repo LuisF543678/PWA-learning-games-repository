@@ -98,4 +98,28 @@ setInterval(function () {
   }
 }, 100);
 
+/**
+ * Notificactions
+ */
 
+var button = document.getElementById("notification");
+button.addEventListener('click', function (e) {
+  Notification.requestPermission().then(function (result) {
+    if (result === 'granted') {
+      randomNotification();
+    }
+  });
+});
+
+function randomNotification() {
+  /* var randomItem = Math.floor(Math.random() * games.length); */
+  var notifTitle = "Mantente notificado para nuevos juegos";
+  var notifBody = "Actualiza tu aplicación constantemente";
+  var notifImg = "./assets/icons/ms-icon-310x310.png";
+  var options = {
+    body: notifBody,
+    icon: notifImg
+  }
+  var notif = new Notification(notifTitle, options);
+  setTimeout(randomNotification, 30000);
+}

@@ -12,12 +12,12 @@
     <link rel="manifest" href="./manifest.json">
     <script src="script.js"></script>
     <link rel="stylesheet" href="./assets/css/menu.css">
-    
+
 </head>
 
 <body>
     <h1 class="title">Opciones de algunos juegos</h1>
-
+    
     <div id="app" class="container">
         <a href="memorama.html">
             <card data-image="./assets/img/card-img-1.jpg">
@@ -38,8 +38,48 @@
             </card>
         </a>
     </div>
+
+    <div>
+        <button class="button-9" role="button" type="button" id="addapp">Descarga nuestra aplicación</button>
+
+        <button class="button-9" role="button" type="button" id="notification">Click para notificaciónes</button>
+    </div>
+        
+
     <script src="./assets/js/vue.min.js"></script>
     <script src="./assets/js/menu.js"></script>
+    <script>
+        let deferredPrompt;
+        window.addEventListener('beforeinstallprompt', function (e) {
+            e.preventDefault();
+            deferredPrompt = e;
+        });
+        addapp = document.getElementById("addapp");
+        addapp.addEventListener("click", (e) => {
+            addapp.style.display = "none"; 
+            deferredPrompt.prompt();
+            deferredPrompt.userChoice.then((choiceResult) => {
+                if (choiceResult.outcome === 'accepted') {
+                    console.log("instalado");
+                    /* addapp.style.display = "none"; */
+                }
+                else {
+                    console.log("No se instalo");
+                }
+                deferredPrompt = null;
+            });
+        });
+    </script>
+
+<script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
+<script>
+  window.OneSignal = window.OneSignal || [];
+  OneSignal.push(function() {
+    OneSignal.init({
+      appId: "1ed8cd49-ba97-4a7d-9508-834db4d3b2ad",
+    });
+  });
+</script>
 </body>
 
 </html>
