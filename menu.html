@@ -12,7 +12,15 @@
     <link rel="manifest" href="./manifest.json">
     <script src="script.js"></script>
     <link rel="stylesheet" href="./assets/css/menu.css">
-
+    <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
+    <script>
+      window.OneSignal = window.OneSignal || [];
+      OneSignal.push(function() {
+        OneSignal.init({
+          appId: "1ed8cd49-ba97-4a7d-9508-834db4d3b2ad",
+        });
+      });
+    </script>
 </head>
 
 <body>
@@ -71,15 +79,6 @@
         });
     </script>
 
-<script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
-<script>
-  window.OneSignal = window.OneSignal || [];
-  OneSignal.push(function() {
-    OneSignal.init({
-      appId: "1ed8cd49-ba97-4a7d-9508-834db4d3b2ad",
-    });
-  });
-</script>
 </body>
 
 </html>
