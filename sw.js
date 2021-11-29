@@ -49,6 +49,8 @@
   './assets/js/vue.js',
   './assets/js/vue.min.js',
   './assets/js/workbox-sw.js',
+
+  
   './OneSignalSDKUpdaterWorker.js',
   './OneSignalSDKWorker.js',
 
