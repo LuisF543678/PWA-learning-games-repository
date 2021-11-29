@@ -51,8 +51,8 @@
   './assets/js/workbox-sw.js',
 
   
-  './OneSignalSDKUpdaterWorker.js',
-  './OneSignalSDKWorker.js',
+  /* './OneSignalSDKUpdaterWorker.js',
+  './OneSignalSDKWorker.js', */
 
   './assets/img/banner.jpg',
   './assets/img/card-img-1.jpg',
