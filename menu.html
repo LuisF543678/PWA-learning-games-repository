@@ -57,7 +57,7 @@
         addapp = document.getElementById("addapp");
         addapp.addEventListener("click", (e) => {
             addapp.style.display = "none"; 
-            //deferredPrompt.prompt();
+            deferredPrompt.prompt();
             deferredPrompt.userChoice.then((choiceResult) => {
                 if (choiceResult.outcome === 'accepted') {
                     console.log("instalado");
